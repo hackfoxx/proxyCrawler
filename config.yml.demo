@@ -1,0 +1,12 @@
+web:
+  addr: ":8081" # web服务端口
+  base_path: "/v1" # 前置路径，设置为/v1后需访问 /v1/proxies
+  authorization: "your-token" # 认证头，需要携带该请求头才可以正常访问，否则会报403 默认 a57f1abe-c6df-4a9b-82ad-a29cf1304399
+database:
+  #配置MySQL连接参数
+  username: "root"  #账号
+  password: "123456" #密码
+  host: "127.0.0.1" #数据库地址，可以是Ip或者域名
+  port: 3306 #数据库端口
+  Dbname: "crawler" #数据库名
+  timeout: "10s" #连接超时，10秒
