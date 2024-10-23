@@ -22,6 +22,11 @@ builds:
       - linux
       - windows
       - darwin
+    goarch:
+      - 386
+      - amd64
+      - arm
+      - arm64
     main: ./cmd/main.go
 
 archives:
@@ -38,6 +43,9 @@ archives:
     format_overrides:
       - goos: windows
         format: zip
+    files:
+      - README.md
+      - config.yml.demo
 
 changelog:
   sort: asc
