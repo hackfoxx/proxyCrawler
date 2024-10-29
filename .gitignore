@@ -6,3 +6,4 @@ log/
 cmd/test.go
 config.yml
 dist/
+main.exe

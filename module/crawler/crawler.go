@@ -1,6 +1,7 @@
 package crawler
 
 import (
+	"fmt"
 	"proxyCrawler/database"
 	"proxyCrawler/model"
 	"time"
@@ -32,7 +33,7 @@ func GetInterval(ctype string) time.Duration {
 
 	return intervalMap[ctype]
 }
-func Init() bool {
+func Init() {
 	for typeName := range crawlerMap {
 		crawler := database.GetCrawler(typeName)
 		tmp := crawler
@@ -44,7 +45,7 @@ func Init() bool {
 			database.SetCrawlers([]model.Crawler{tmp}, true)
 		}
 	}
-	return true
+	fmt.Println("successfully init crawlers")
 }
 
 // GetCrawlerTypes 获取全部CrawlerType

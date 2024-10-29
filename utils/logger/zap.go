@@ -1,6 +1,7 @@
 package logger
 
 import (
+	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"os"
@@ -13,7 +14,7 @@ var (
 )
 
 // Init 初始化全局 logger
-func Init() bool {
+func Init() {
 	once.Do(func() {
 		err := os.MkdirAll("log", 0666)
 		if err != nil && !os.IsExist(err) {
@@ -71,7 +72,7 @@ func Init() bool {
 		// 创建 Logger
 		logger = zap.New(zapcore.NewTee(infoCore, errorCore, consoleCore), zap.AddCaller())
 	})
-	return true
+	fmt.Println("successfully init the logger ")
 }
 
 // GetLogger 返回全局 logger 实例

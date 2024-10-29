@@ -10,7 +10,7 @@ import (
 
 var isRunning bool
 
-func validatorJob() {
+func ValidatorJob() {
 	if isRunning {
 		logger.GetLogger().Info("验证器正在运行...")
 		return

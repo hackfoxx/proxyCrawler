@@ -54,7 +54,7 @@ func (f *Server) Start() {
 						panic(err)
 					}
 					r = handler.SetHandler(r)
-					err = r.Run(config.GetConfig().Web.Addr)
+					err = r.Run(config.Cfg.Web.Addr)
 					if err != nil {
 						return
 					}
